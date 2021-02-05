@@ -4,7 +4,7 @@ export const sayCorrectAnswer = () => {
 
 export const sayInCorrect = (correct, userAnswer, userName) => {
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correct}'`);
-  console.log(`Let's try again, ${userName}`);
+  console.log(`Let's try again, ${userName}!`);
 };
 
 export const sayWelcomeGame = () => {
