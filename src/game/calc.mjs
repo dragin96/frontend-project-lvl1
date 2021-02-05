@@ -1,5 +1,5 @@
-import {random} from "../utils/random.mjs";
-import {play} from "../index.mjs";
+import { random } from '../utils/random.mjs';
+import { play } from '../index.mjs';
 
 const getDataCalc = () => ({
   description: 'What is the result of the expression?',

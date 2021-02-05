@@ -1,8 +1,11 @@
-import {sayCompleted, sayCorrectAnswer, sayHelloByName, sayInCorrect, sayWelcomeGame} from "./utils/core.mjs";
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
+import {
+  sayCompleted, sayCorrectAnswer, sayHelloByName, sayInCorrect, sayWelcomeGame,
+} from './utils/core.mjs';
 
 const attempt = 3;
-export const play = (dataPlay) => {
+
+export function play(dataPlay) {
   sayWelcomeGame();
   console.log(dataPlay.description);
 
@@ -10,7 +13,7 @@ export const play = (dataPlay) => {
   sayHelloByName(name);
   for (let i = 0; i < attempt; i += 1) {
     const question = dataPlay.question();
-    const correctAnswer = dataPlay.correctAnswer;
+    const { correctAnswer } = dataPlay;
     const answer = readlineSync.question(`Question: ${question}\nYour answer: `);
 
     if (String(answer) === String(correctAnswer)) {
@@ -21,4 +24,5 @@ export const play = (dataPlay) => {
     }
   }
   sayCompleted(name);
+  return null;
 }

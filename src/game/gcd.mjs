@@ -1,9 +1,9 @@
-import {random} from "../utils/random.mjs";
-import {play} from "../index.mjs";
+import { random } from '../utils/random.mjs';
+import { play } from '../index.mjs';
 
 const getGcd = (a, b) => (!b ? a : getGcd(b, a % b));
 
-const getDataGCD = () =>  ({
+const getDataGCD = () => ({
   description: 'Find the greatest common divisor of given numbers.',
   correctAnswer: '',
   question() {

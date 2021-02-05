@@ -1,9 +1,9 @@
-import {random} from "../utils/random.mjs";
-import {play} from "../index.mjs";
+import { random } from '../utils/random.mjs';
+import { play } from '../index.mjs';
 
 const isEven = (number) => number % 2 === 0;
 
-const getDataParty = () =>  ({
+const getDataParty = () => ({
   description: 'Answer "yes" if the number is even, otherwise answer "no".',
   correctAnswer: '',
   question() {

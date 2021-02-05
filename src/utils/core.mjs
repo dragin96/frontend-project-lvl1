@@ -13,8 +13,8 @@ export const sayWelcomeGame = () => {
 
 export const sayHelloByName = (name) => {
   console.log(`Hello, ${name}!`);
-}
+};
 
 export const sayCompleted = (name) => {
   console.log(`Congratulations, ${name}!`);
-}
+};
