@@ -7,8 +7,9 @@ const getDataGCD = () => ({
   description: 'Find the greatest common divisor of given numbers.',
   correctAnswer: '',
   question() {
-    const num1 = random(1, 100);
-    const num2 = random(1, 100);
+    const maxRandom = 100;
+    const num1 = random(1, maxRandom);
+    const num2 = random(1, maxRandom);
     this.correctAnswer = String(getGcd(num1, num2));
     return `${num1} ${num2}`;
   },

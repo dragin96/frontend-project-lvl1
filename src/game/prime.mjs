@@ -13,7 +13,8 @@ export const getDataPrime = () => ({
   description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
   correctAnswer: '',
   question() {
-    const question = random(1, 100);
+    const maxRandom = 100;
+    const question = random(1, maxRandom);
 
     this.correctAnswer = isPrime(question) ? 'yes' : 'no';
     return question;

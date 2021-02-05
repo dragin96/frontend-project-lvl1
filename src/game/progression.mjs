@@ -3,7 +3,8 @@ import { play } from '../index.mjs';
 
 const progression = (firstElement, hiddenElementPosition, step) => {
   const progressionArr = [];
-  for (let i = 0; i < 10; i += 1) {
+  const maxLengthProgression = 10;
+  for (let i = 0; i < maxLengthProgression; i += 1) {
     if (i === hiddenElementPosition) {
       progressionArr.push('..');
     } else {

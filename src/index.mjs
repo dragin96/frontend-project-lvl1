@@ -3,7 +3,7 @@ import {
   sayCompleted, sayCorrectAnswer, sayHelloByName, sayInCorrect, sayWelcomeGame,
 } from './utils/core.mjs';
 
-const attempt = 3;
+const round = 3;
 
 export function play(dataPlay) {
   sayWelcomeGame();
@@ -11,7 +11,7 @@ export function play(dataPlay) {
 
   const name = readlineSync.question('May I have your name? ');
   sayHelloByName(name);
-  for (let i = 0; i < attempt; i += 1) {
+  for (let i = 0; i < round; i += 1) {
     const question = dataPlay.question();
     const { correctAnswer } = dataPlay;
     const answer = readlineSync.question(`Question: ${question}\nYour answer: `);

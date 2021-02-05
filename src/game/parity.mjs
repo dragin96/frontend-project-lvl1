@@ -7,7 +7,8 @@ const getDataParty = () => ({
   description: 'Answer "yes" if the number is even, otherwise answer "no".',
   correctAnswer: '',
   question() {
-    const question = random(0, 1000);
+    const maxRandom = 1000;
+    const question = random(0, maxRandom);
     this.correctAnswer = isEven(question) ? 'yes' : 'no';
     return question;
   },
