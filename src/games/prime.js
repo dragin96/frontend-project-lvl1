@@ -1,5 +1,5 @@
-import { random } from '../utils/random.js';
-import { play } from '../index.js';
+import random from '../utils/random.js';
+import play from '../index.js';
 
 const isPrime = (num) => {
   if (num < 2) return false;

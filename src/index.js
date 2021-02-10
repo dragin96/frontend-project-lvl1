@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 const round = 3;
 
-export const play = (dataPlay) => () => {
+export default (dataPlay) => () => {
   console.log('Welcome to the Brain Games!');
   console.log(dataPlay.description);
 

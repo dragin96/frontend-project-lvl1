@@ -1,5 +1,5 @@
-import { random } from '../utils/random.js';
-import { play } from '../index.js';
+import random from '../utils/random.js';
+import play from '../index.js';
 
 const getGcd = (a, b) => (!b ? a : getGcd(b, a % b));
 
