@@ -1,8 +1,7 @@
 import readlineSync from 'readline-sync';
-import { sayHelloByName, sayWelcomeGame } from './utils/core.mjs';
 
 export const demo = () => {
-  sayWelcomeGame();
+  console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
-  sayHelloByName(name);
+  console.log(`Hello, ${name}!`);
 };

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { runParty } from '../src/game/parity.mjs';
+import runEven from '../src/games/even.js';
 
-runParty();
+runEven();

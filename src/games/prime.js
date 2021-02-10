@@ -1,5 +1,5 @@
-import { random } from '../utils/random.mjs';
-import { play } from '../index.mjs';
+import { random } from '../utils/random.js';
+import { play } from '../index.js';
 
 const isPrime = (num) => {
   if (num < 2) return false;
@@ -9,16 +9,14 @@ const isPrime = (num) => {
   return true;
 };
 
-export const getDataPrime = () => ({
+const getDataPrime = {
   description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-  correctAnswer: '',
-  question() {
+  questionWithAnswer() {
     const maxRandom = 100;
     const question = random(1, maxRandom);
-
-    this.correctAnswer = isPrime(question) ? 'yes' : 'no';
-    return question;
+    const answer = isPrime(question) ? 'yes' : 'no';
+    return { question, answer };
   },
-});
+};
 
-export const runPrime = () => play(getDataPrime());
+export default play(getDataPrime);

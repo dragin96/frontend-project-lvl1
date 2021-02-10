@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { runParty } from '../src/game/calc.mjs';
+import runCalc from '../src/games/calc.js';
 
-runParty();
+runCalc();

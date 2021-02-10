@@ -1,5 +1,5 @@
-import { random } from '../utils/random.mjs';
-import { play } from '../index.mjs';
+import { random } from '../utils/random.js';
+import { play } from '../index.js';
 
 const progression = (firstElement, hiddenElementPosition, step) => {
   const progressionArr = [];
@@ -14,17 +14,17 @@ const progression = (firstElement, hiddenElementPosition, step) => {
   return progressionArr;
 };
 
-export const getDataProgression = () => ({
+export const getDataProgression = {
   description: 'What number is missing in the progression?',
-  correctAnswer: '',
-  question() {
+  questionWithAnswer() {
     const firstElement = random(1, 20);
     const step = random(2, 5);
     const hiddenElementPosition = random(0, 10 - 1);
 
-    this.correctAnswer = firstElement + hiddenElementPosition * step;
-    return progression(firstElement, hiddenElementPosition, step).join(' ');
+    const answer = String(firstElement + hiddenElementPosition * step);
+    const question = progression(firstElement, hiddenElementPosition, step).join(' ');
+    return { question, answer };
   },
-});
+};
 
-export const runProgression = () => play(getDataProgression());
+export default play(getDataProgression);
