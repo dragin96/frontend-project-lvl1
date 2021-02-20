@@ -1,7 +1,7 @@
-import random from '../utils/random.js';
-import play from '../index.js';
+import getRandomInt from '../utils.js';
+import initGame from '../index.js';
 
-const calculator = (num1, num2, randomOperations) => {
+const countExpression = (num1, num2, randomOperations) => {
   switch (randomOperations) {
     case '+':
       return num1 + num2;
@@ -10,23 +10,23 @@ const calculator = (num1, num2, randomOperations) => {
     case '*':
       return num1 * num2;
     default:
-      return false;
+      throw new Error(`Unknown operators: '${randomOperations}'!`);
   }
 };
 
-const getDataCalc = {
+const calcGame = {
   description: 'What is the result of the expression?',
-  questionWithAnswer() {
+  getQuestionWithAnswer() {
     const maxRandom = 10;
 
-    const num1 = random(1, maxRandom);
-    const num2 = random(1, maxRandom);
-    const listOperation = '+-*';
-    const randomOperations = listOperation[random(0, listOperation.length - 1)];
-    const question = `${num1} ${randomOperations} ${num2}`;
-    const answer = String(calculator(num1, num2, randomOperations));
+    const num1 = getRandomInt(1, maxRandom);
+    const num2 = getRandomInt(1, maxRandom);
+    const listMathOperations = ['+', '-', '*'];
+    const randomOperation = listMathOperations[getRandomInt(0, listMathOperations.length - 1)];
+    const question = `${num1} ${randomOperation} ${num2}`;
+    const answer = String(countExpression(num1, num2, randomOperation));
     return { question, answer };
   },
 };
 
-export default play(getDataCalc);
+export default initGame(calcGame.description, calcGame.getQuestionWithAnswer);

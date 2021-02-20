@@ -1,16 +1,16 @@
-import random from '../utils/random.js';
-import play from '../index.js';
+import getRandomInt from '../utils.js';
+import initGame from '../index.js';
 
-const isEven = (number) => number % 2 === 0;
+const isEvenNumber = (number) => number % 2 === 0;
 
-const getDataEven = {
+const evenGame = {
   description: 'Answer "yes" if the number is even, otherwise answer "no".',
-  questionWithAnswer() {
+  getQuestionWithAnswer() {
     const maxRandom = 1000;
-    const question = random(0, maxRandom);
-    const answer = isEven(question) ? 'yes' : 'no';
+    const question = getRandomInt(0, maxRandom);
+    const answer = isEvenNumber(question) ? 'yes' : 'no';
     return { question, answer };
   },
 };
 
-export default play(getDataEven);
+export default initGame(evenGame.description, evenGame.getQuestionWithAnswer);

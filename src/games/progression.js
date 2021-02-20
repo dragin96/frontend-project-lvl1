@@ -1,30 +1,42 @@
-import random from '../utils/random.js';
-import play from '../index.js';
+import getRandomInt from '../utils.js';
+import initGame from '../index.js';
 
-const progression = (firstElement, hiddenElementPosition, step) => {
+const settingProgression = {
+  start: {
+    min: 1,
+    max: 20,
+  },
+  step: {
+    min: 2,
+    max: 5,
+  },
+  maxLength: 10,
+};
+
+const getHiddenSequence = (firstElement, hiddenElementPosition, step) => {
   const progressionArr = [];
-  const maxLengthProgression = 10;
-  for (let i = 0; i < maxLengthProgression; i += 1) {
+  for (let i = 0; i < settingProgression.maxLength; i += 1) {
     if (i === hiddenElementPosition) {
       progressionArr.push('..');
     } else {
-      progressionArr.push(`${i * step + firstElement}`);
+      const nextElementProgression = `${i * step + firstElement}`;
+      progressionArr.push(nextElementProgression);
     }
   }
   return progressionArr;
 };
 
-export const getDataProgression = {
+export const progressionGame = {
   description: 'What number is missing in the progression?',
-  questionWithAnswer() {
-    const firstElement = random(1, 20);
-    const step = random(2, 5);
-    const hiddenElementPosition = random(0, 10 - 1);
+  getQuestionWithAnswer() {
+    const firstElement = getRandomInt(settingProgression.start.min, settingProgression.start.max);
+    const step = getRandomInt(settingProgression.step.min, settingProgression.step.max);
+    const hiddenElementPosition = getRandomInt(0, settingProgression.maxLength);
 
     const answer = String(firstElement + hiddenElementPosition * step);
-    const question = progression(firstElement, hiddenElementPosition, step).join(' ');
+    const question = getHiddenSequence(firstElement, hiddenElementPosition, step).join(' ');
     return { question, answer };
   },
 };
 
-export default play(getDataProgression);
+export default initGame(progressionGame.description, progressionGame.getQuestionWithAnswer);
