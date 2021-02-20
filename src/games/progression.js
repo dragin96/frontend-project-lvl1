@@ -26,17 +26,15 @@ const getHiddenSequence = (firstElement, hiddenElementPosition, step) => {
   return progressionArr;
 };
 
-export const progressionGame = {
-  description: 'What number is missing in the progression?',
-  getQuestionWithAnswer() {
-    const firstElement = getRandomInt(settingProgression.start.min, settingProgression.start.max);
-    const step = getRandomInt(settingProgression.step.min, settingProgression.step.max);
-    const hiddenElementPosition = getRandomInt(0, settingProgression.maxLength);
+const description = 'What number is missing in the progression?';
+const getQuestionWithAnswer = () => {
+  const firstElement = getRandomInt(settingProgression.start.min, settingProgression.start.max);
+  const step = getRandomInt(settingProgression.step.min, settingProgression.step.max);
+  const hiddenElementPosition = getRandomInt(0, settingProgression.maxLength);
 
-    const answer = String(firstElement + hiddenElementPosition * step);
-    const question = getHiddenSequence(firstElement, hiddenElementPosition, step).join(' ');
-    return { question, answer };
-  },
+  const answer = String(firstElement + hiddenElementPosition * step);
+  const question = getHiddenSequence(firstElement, hiddenElementPosition, step).join(' ');
+  return { question, answer };
 };
 
-export default initGame(progressionGame.description, progressionGame.getQuestionWithAnswer);
+export default initGame(description, getQuestionWithAnswer);

@@ -9,14 +9,12 @@ const isPrimeNumber = (num) => {
   return true;
 };
 
-const primeGame = {
-  description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-  getQuestionWithAnswer() {
-    const maxRandom = 100;
-    const question = getRandomInt(1, maxRandom);
-    const answer = isPrimeNumber(question) ? 'yes' : 'no';
-    return { question, answer };
-  },
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const getQuestionWithAnswer = () => {
+  const maxRandom = 100;
+  const question = getRandomInt(1, maxRandom);
+  const answer = isPrimeNumber(question) ? 'yes' : 'no';
+  return { question, answer };
 };
 
-export default initGame(primeGame.description, primeGame.getQuestionWithAnswer);
+export default initGame(description, getQuestionWithAnswer);
