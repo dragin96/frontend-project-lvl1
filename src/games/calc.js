@@ -1,8 +1,8 @@
-import getRandomInt from '../utils.js';
+import { getRandomInt } from '../utils.js';
 import initGame from '../index.js';
 
-const countExpression = (num1, num2, randomOperations) => {
-  switch (randomOperations) {
+const countExpression = (num1, num2, operation) => {
+  switch (operation) {
     case '+':
       return num1 + num2;
     case '-':
@@ -10,7 +10,7 @@ const countExpression = (num1, num2, randomOperations) => {
     case '*':
       return num1 * num2;
     default:
-      throw new Error(`Unknown operators: '${randomOperations}'!`);
+      throw new Error(`Unknown operator: '${operation}'!`);
   }
 };
 
