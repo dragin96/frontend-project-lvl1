@@ -1,7 +1,7 @@
 import { getRandomInt } from '../utils.js';
 import initGame from '../index.js';
 
-const countExpression = (num1, num2, operation) => {
+const calculate = (num1, num2, operation) => {
   switch (operation) {
     case '+':
       return num1 + num2;
@@ -19,10 +19,10 @@ const getQuestionWithAnswer = () => {
   const maxRandom = 10;
   const num1 = getRandomInt(1, maxRandom);
   const num2 = getRandomInt(1, maxRandom);
-  const listMathOperations = ['+', '-', '*'];
-  const randomOperation = listMathOperations[getRandomInt(0, listMathOperations.length - 1)];
+  const mathOperations = ['+', '-', '*'];
+  const randomOperation = mathOperations[getRandomInt(0, mathOperations.length - 1)];
   const question = `${num1} ${randomOperation} ${num2}`;
-  const answer = String(countExpression(num1, num2, randomOperation));
+  const answer = String(calculate(num1, num2, randomOperation));
   return { question, answer };
 };
 

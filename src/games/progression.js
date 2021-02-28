@@ -13,17 +13,17 @@ const settingProgression = {
   maxLength: 10,
 };
 
-const getHiddenSequence = (firstElement, hiddenElementPosition, step) => {
-  const progressionArr = [];
+const getQuestionGame = (firstElement, hiddenElementPosition, step) => {
+  const result = [];
   for (let i = 0; i < settingProgression.maxLength; i += 1) {
     if (i === hiddenElementPosition) {
-      progressionArr.push('..');
+      result.push('..');
     } else {
       const nextElementProgression = `${i * step + firstElement}`;
-      progressionArr.push(nextElementProgression);
+      result.push(nextElementProgression);
     }
   }
-  return progressionArr;
+  return result;
 };
 
 const description = 'What number is missing in the progression?';
@@ -33,7 +33,7 @@ const getQuestionWithAnswer = () => {
   const hiddenElementPosition = getRandomInt(0, settingProgression.maxLength);
 
   const answer = String(firstElement + hiddenElementPosition * step);
-  const question = getHiddenSequence(firstElement, hiddenElementPosition, step).join(' ');
+  const question = getQuestionGame(firstElement, hiddenElementPosition, step).join(' ');
   return { question, answer };
 };
 

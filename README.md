@@ -1,7 +1,7 @@
 ### Статус сборок:
 [![Actions Status](https://github.com/dragin96/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/dragin96/frontend-project-lvl1/actions)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/67255b50647ec59600c0/maintainability)](https://codeclimate.com/github/dragin96/frontend-project-lvl1/maintainability)
 
 [![Actions Status](https://github.com/dragin96/frontend-project-lvl1/workflows/linter/badge.svg)](https://github.com/dragin96/frontend-project-lvl1/actions)
 #### Установка:
