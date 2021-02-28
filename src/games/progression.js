@@ -3,7 +3,7 @@ import initGame from '../index.js';
 
 const settingProgression = {
   start: {
-    min: 1,
+    min: 2,
     max: 20,
   },
   step: {
